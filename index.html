@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世足情報 2026 | 台灣球迷必看世界盃資訊站</title>
+  <meta name="description" content="2026世界盃完整球隊介紹、小組賽程分析、球星特寫，台灣球迷最完整的世足情報，附球衣、周邊、看球設備推薦。">
+  <meta property="og:title" content="世足情報 2026 | 台灣球迷必看世界盃資訊站">
+  <meta property="og:description" content="球隊介紹、小組分析、球星特寫，台灣最完整世足情報站">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://worldcup2026-tw.pages.dev/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #CC0000;
+      --red-dark: #AA0000;
+      --navy: #0A1628;
+      --navy2: #122040;
+      --gray-100: #F5F5F5;
+      --gray-200: #EBEBEB;
+      --gray-400: #BBBBBB;
+      --gray-600: #777777;
+      --gray-800: #333333;
+      --text: #1A1A1A;
+      --white: #FFFFFF;
+      --radius: 4px;
+      --max: 1200px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans TC', sans-serif; background: var(--gray-100); color: var(--text); font-size: 15px; line-height: 1.6; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+      padding: 0 1rem;
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 34px;
+      gap: 1rem;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 1.25rem; }
+    .topbar-left span { color: rgba(255,255,255,0.4); }
+    .countdown-inline {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+    .countdown-inline strong {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      color: #FF6B6B;
+      letter-spacing: 1px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--white);
+      border-bottom: 3px solid var(--red);
+      padding: 0 1rem;
+    }
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 1rem;
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+    .logo span { color: var(--red); }
+    .logo small {
+      display: block;
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      color: var(--gray-600);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .header-shopbtn {
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius);
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .header-shopbtn:hover { background: var(--red-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .nav-inner a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 0.85rem 1rem;
+      border-bottom: 3px solid transparent;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .nav-inner a:hover,
+    .nav-inner a.active { color: var(--white); border-bottom-color: var(--red); }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--navy2);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .mobile-menu.open { display: flex; }
+
+    /* ── HERO FEATURE ── */
+    .hero-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .hero-feature-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 0;
+    }
+    .hero-main { position: relative; overflow: hidden; }
+    .hero-main a { display: block; height: 100%; }
+    .hero-img-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .hero-main:hover .hero-img-wrap img { transform: scale(1.03); }
+    .hero-main-body { padding: 1.25rem 1.5rem 1.5rem; }
+    .hero-cat { display: inline-block; background: var(--red); color: var(--white); font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 2px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .hero-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .hero-title:hover { color: var(--red); }
+    .hero-desc { font-size: 0.9rem; color: var(--gray-600); line-height: 1.65; }
+    .hero-meta { margin-top: 0.75rem; font-size: 0.75rem; color: var(--gray-400); }
+    .hero-meta strong { color: var(--red); }
+
+    /* sidebar list */
+    .hero-sidebar { border-left: 1px solid var(--gray-200); display: flex; flex-direction: column; }
+    .hero-sidebar-title {
+      padding: 0.75rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--navy);
+    }
+    .sidebar-article { display: flex; gap: 0.75rem; padding: 0.85rem 1rem; border-bottom: 1px solid var(--gray-200); transition: background 0.15s; }
+    .sidebar-article:hover { background: var(--gray-100); }
+    .sidebar-thumb { width: 80px; height: 56px; border-radius: var(--radius); overflow: hidden; flex-shrink: 0; }
+    .sidebar-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .sidebar-cat { font-size: 0.65rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+    .sidebar-title { font-size: 0.82rem; font-weight: 700; line-height: 1.35; color: var(--navy); }
+    .sidebar-article:hover .sidebar-title { color: var(--red); }
+    .sidebar-meta { font-size: 0.7rem; color: var(--gray-400); margin-top: 0.25rem; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap { max-width: var(--max); margin: 1.5rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr 300px; gap: 1.5rem; }
+
+    /* ── SECTION HEADER ── */
+    .sec-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid var(--navy); padding-bottom: 0.6rem; margin-bottom: 1.25rem; }
+    .sec-header h2 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); letter-spacing: 0.5px; text-transform: uppercase; }
+    .sec-header h2 span { color: var(--red); }
+    .sec-more { font-size: 0.75rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.5px; }
+    .sec-more:hover { text-decoration: underline; }
+
+    /* ── ARTICLE CARDS (3-col grid) ── */
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
+    .news-card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-200); transition: box-shadow 0.2s; }
+    .news-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .news-card-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .news-card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
+    .news-card:hover .news-card-thumb img { transform: scale(1.04); }
+    .news-card-body { padding: 0.85rem 1rem 1rem; }
+    .news-cat { font-size: 0.65rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+    .news-title { font-size: 0.92rem; font-weight: 700; line-height: 1.4; color: var(--navy); margin-bottom: 0.4rem; }
+    .news-card:hover .news-title { color: var(--red); }
+    .news-desc { font-size: 0.8rem; color: var(--gray-600); line-height: 1.55; }
+    .news-meta { font-size: 0.7rem; color: var(--gray-400); margin-top: 0.6rem; }
+
+    /* ── TEAMS GRID ── */
+    .teams-section { margin-bottom: 2rem; }
+    .teams-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.75rem; }
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .team-card:hover { border-color: var(--red); box-shadow: 0 2px 10px rgba(204,0,0,0.12); }
+    .team-flag { width: 100%; aspect-ratio: 3/2; overflow: hidden; }
+    .team-flag img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .team-card:hover .team-flag img { transform: scale(1.05); }
+    .team-info { padding: 0.5rem 0.6rem; }
+    .team-name { font-size: 0.78rem; font-weight: 700; color: var(--navy); margin-bottom: 0.1rem; }
+    .team-group { font-size: 0.65rem; color: var(--gray-600); }
+    .team-badge { display: inline-block; background: var(--red); color: var(--white); font-size: 0.58rem; font-weight: 700; padding: 0.08rem 0.35rem; border-radius: 2px; margin-top: 0.2rem; }
+    .team-more {
+      background: var(--navy);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      gap: 0.4rem;
+      transition: background 0.2s;
+    }
+    .team-more:hover { background: var(--red); color: var(--white); }
+    .team-more svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* shop widget */
+    .shop-widget { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
+    .widget-header { background: var(--red); color: var(--white); padding: 0.6rem 1rem; font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .shop-item { display: flex; gap: 0.75rem; padding: 0.85rem 1rem; border-bottom: 1px solid var(--gray-200); transition: background 0.15s; }
+    .shop-item:hover { background: var(--gray-100); }
+    .shop-item:last-child { border-bottom: none; }
+    .shop-thumb { width: 68px; height: 50px; border-radius: var(--radius); overflow: hidden; flex-shrink: 0; }
+    .shop-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .shop-item-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 0.3rem; }
+    .shop-item:hover .shop-item-title { color: var(--red); }
+    .shop-cta { font-size: 0.68rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* ranking widget */
+    .rank-widget { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
+    .rank-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1rem; border-bottom: 1px solid var(--gray-200); transition: background 0.15s; }
+    .rank-item:hover { background: var(--gray-100); }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-num { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--gray-400); width: 22px; flex-shrink: 0; }
+    .rank-num.top { color: var(--red); }
+    .rank-flag { width: 36px; height: 26px; border-radius: 2px; overflow: hidden; flex-shrink: 0; }
+    .rank-flag img { width: 100%; height: 100%; object-fit: cover; }
+    .rank-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); flex: 1; }
+    .rank-score { font-family: 'Oswald', sans-serif; font-size: 0.85rem; color: var(--gray-600); }
+
+    /* ── BANNER AD PLACEHOLDER ── */
+    .banner-placeholder {
+      background: var(--gray-200);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      border: 1px dashed var(--gray-400);
+    }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); color: rgba(255,255,255,0.55); margin-top: 3rem; padding: 2rem 1rem; font-size: 0.8rem; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .footer-logo { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 1px; margin-bottom: 0.4rem; }
+    .footer-logo span { color: var(--red); }
+    .footer-desc { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 280px; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.4rem; }
+    .footer-links a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+    .affiliate-note { color: rgba(255,255,255,0.25); font-size: 0.7rem; }
+
+    .divider { border: none; border-top: 1px solid var(--gray-200); margin: 1.5rem 0; }
+
+    /* ── RWD ── */
+    @media (max-width: 1024px) {
+      .hero-feature-inner { grid-template-columns: 1fr; }
+      .hero-sidebar { border-left: none; border-top: 1px solid var(--gray-200); display: grid; grid-template-columns: repeat(3, 1fr); }
+      .hero-sidebar-title { grid-column: 1/-1; }
+      .teams-grid { grid-template-columns: repeat(4, 1fr); }
+      .main-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: grid; grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .topbar-left span { display: none; }
+      .hamburger { display: flex; }
+      .nav-inner { display: none; }
+      .cards-3 { grid-template-columns: 1fr; }
+      .teams-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero-sidebar { grid-template-columns: 1fr; }
+      .sidebar { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .teams-grid { grid-template-columns: repeat(2, 1fr); }
+      .header-shopbtn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span id="now-date">2026年5月17日</span>
+      <span>｜</span>
+      <div class="countdown-inline">
+        開幕倒數&nbsp;
+        <strong id="cd-top">計算中...</strong>
+      </div>
+    </div>
+    <span>台灣最完整世足情報站</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      世足情報<span>2026</span>
+      <small>WORLDCUP NEWS · TAIWAN</small>
+    </a>
+    <div class="header-right">
+      <a href="#shop" class="header-shopbtn">看球好物推薦</a>
+      <button class="hamburger" id="menuBtn" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#teams" class="active">球隊介紹</a>
+    <a href="#articles">賽事分析</a>
+    <a href="#players">球星特寫</a>
+    <a href="#schedule">賽程時間</a>
+    <a href="#shop">看球好物</a>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#teams" onclick="closeMobileMenu()">球隊介紹</a>
+  <a href="#articles" onclick="closeMobileMenu()">賽事分析</a>
+  <a href="#players" onclick="closeMobileMenu()">球星特寫</a>
+  <a href="#schedule" onclick="closeMobileMenu()">賽程時間</a>
+  <a href="#shop" onclick="closeMobileMenu()">看球好物</a>
+</div>
+
+<!-- HERO FEATURE -->
+<div class="hero-feature">
+  <div class="hero-feature-inner">
+
+    <div class="hero-main">
+      <a href="/articles/group-analysis.html">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1200&q=80&auto=format&fit=crop" alt="2026世界盃主場館" loading="eager">
+        </div>
+        <div class="hero-main-body">
+          <span class="hero-cat">重點報導</span>
+          <h1 class="hero-title">2026世界盃完整分析：48隊小組賽誰能晉級、誰是最大黑馬？</h1>
+          <p class="hero-desc">史上首次48隊制世界盃，小組賽格局全面改變。從熱門奪冠大熱門到最被低估的黑馬隊伍，完整分析帶你一次看懂。</p>
+          <div class="hero-meta"><strong>重點報導</strong> &nbsp;·&nbsp; 8 分鐘閱讀</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="hero-sidebar">
+      <div class="hero-sidebar-title">最新報導</div>
+
+      <a href="/articles/messi-argentina.html" class="sidebar-article">
+        <div class="sidebar-thumb">
+          <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=200&q=75&auto=format&fit=crop" alt="阿根廷衛冕" loading="lazy">
+        </div>
+        <div>
+          <div class="sidebar-cat">球星特寫</div>
+          <div class="sidebar-title">梅西最後一屆世足？阿根廷衛冕之路分析</div>
+          <div class="sidebar-meta">6 分鐘閱讀</div>
+        </div>
+      </a>
+
+      <a href="/articles/watch-guide.html" class="sidebar-article">
+        <div class="sidebar-thumb">
+          <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=200&q=75&auto=format&fit=crop" alt="看球指南" loading="lazy">
+        </div>
+        <div>
+          <div class="sidebar-cat">看球指南</div>
+          <div class="sidebar-title">台灣轉播時間整理：哪些場次是深夜直播？</div>
+          <div class="sidebar-meta">4 分鐘閱讀</div>
+        </div>
+      </a>
+
+      <a href="/articles/dark-horse.html" class="sidebar-article">
+        <div class="sidebar-thumb">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=200&q=75&auto=format&fit=crop" alt="黑馬分析" loading="lazy">
+        </div>
+        <div>
+          <div class="sidebar-cat">賽事分析</div>
+          <div class="sidebar-title">2026世足五大黑馬隊伍：誰最有機會爆冷？</div>
+          <div class="sidebar-meta">5 分鐘閱讀</div>
+        </div>
+      </a>
+
+      <a href="/articles/japan-analysis.html" class="sidebar-article">
+        <div class="sidebar-thumb">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&q=75&auto=format&fit=crop" alt="日本隊分析" loading="lazy">
+        </div>
+        <div>
+          <div class="sidebar-cat">球隊介紹</div>
+          <div class="sidebar-title">日本隊 2026 世足陣容：亞洲最強能走多遠？</div>
+          <div class="sidebar-meta">5 分鐘閱讀</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+  <main>
+
+    <!-- Teams -->
+    <section id="teams" class="teams-section">
+      <div class="sec-header">
+        <h2>球隊介紹 <span>·</span> 48強</h2>
+        <a href="/teams/all.html" class="sec-more">查看全部 48 隊 →</a>
+      </div>
+      <div class="teams-grid">
+
+        <a href="/teams/brazil.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/640px-Flag_of_Brazil.svg.png" alt="巴西" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">巴西</div><div class="team-group">A 組</div><span class="team-badge">奪冠熱門</span></div>
+        </a>
+
+        <a href="/teams/argentina.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/640px-Flag_of_Argentina.svg.png" alt="阿根廷" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">阿根廷</div><div class="team-group">B 組</div><span class="team-badge">衛冕冠軍</span></div>
+        </a>
+
+        <a href="/teams/france.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/640px-Flag_of_France.svg.png" alt="法國" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">法國</div><div class="team-group">C 組</div></div>
+        </a>
+
+        <a href="/teams/england.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/640px-Flag_of_England.svg.png" alt="英格蘭" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">英格蘭</div><div class="team-group">D 組</div></div>
+        </a>
+
+        <a href="/teams/germany.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/640px-Flag_of_Germany.svg.png" alt="德國" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">德國</div><div class="team-group">E 組</div></div>
+        </a>
+
+        <a href="/teams/spain.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/640px-Flag_of_Spain.svg.png" alt="西班牙" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">西班牙</div><div class="team-group">F 組</div></div>
+        </a>
+
+        <a href="/teams/portugal.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/640px-Flag_of_Portugal.svg.png" alt="葡萄牙" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">葡萄牙</div><div class="team-group">G 組</div></div>
+        </a>
+
+        <a href="/teams/japan.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/640px-Flag_of_Japan.svg.png" alt="日本" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">日本</div><div class="team-group">H 組</div><span class="team-badge">亞洲最強</span></div>
+        </a>
+
+        <a href="/teams/korea.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/640px-Flag_of_South_Korea.svg.png" alt="韓國" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">韓國</div><div class="team-group">I 組</div></div>
+        </a>
+
+        <a href="/teams/usa.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/640px-Flag_of_the_United_States.svg.png" alt="美國" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">美國</div><div class="team-group">J 組</div><span class="team-badge">地主隊</span></div>
+        </a>
+
+        <a href="/teams/mexico.html" class="team-card">
+          <div class="team-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Mexico.svg/640px-Flag_of_Mexico.svg.png" alt="墨西哥" loading="lazy"></div>
+          <div class="team-info"><div class="team-name">墨西哥</div><div class="team-group">K 組</div><span class="team-badge">地主隊</span></div>
+        </a>
+
+        <a href="/teams/all.html" class="team-more">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          查看全部
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles">
+      <div class="sec-header">
+        <h2>賽事分析 <span>·</span> 深度報導</h2>
+        <a href="/articles/" class="sec-more">更多文章 →</a>
+      </div>
+      <div class="cards-3">
+
+        <a href="/articles/group-a.html" class="news-card">
+          <div class="news-card-thumb"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=75&auto=format&fit=crop" alt="小組分析" loading="lazy"></div>
+          <div class="news-card-body">
+            <div class="news-cat">小組分析</div>
+            <div class="news-title">A 組死亡之組完整分析：巴西法國同組誰能出線？</div>
+            <div class="news-desc">史上最強小組？完整賽程、勝負預測與出線機率分析。</div>
+            <div class="news-meta">5 分鐘閱讀</div>
+          </div>
+        </a>
+
+        <a href="/articles/top-scorers.html" class="news-card">
+          <div class="news-card-thumb"><img src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=600&q=75&auto=format&fit=crop" alt="球星特寫" loading="lazy"></div>
+          <div class="news-card-body">
+            <div class="news-cat">球星特寫</div>
+            <div class="news-title">2026世足最值得關注的10名球星：誰會成為本屆之星？</div>
+            <div class="news-desc">從姆巴佩、維尼修斯到中生代新秀，本屆最值得追的球星完整盤點。</div>
+            <div class="news-meta">7 分鐘閱讀</div>
+          </div>
+        </a>
+
+        <a href="/articles/home-watch.html" class="news-card">
+          <div class="news-card-thumb"><img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&q=75&auto=format&fit=crop" alt="在家看球" loading="lazy"></div>
+          <div class="news-card-body">
+            <div class="news-cat">看球指南</div>
+            <div class="news-title">在家看世足設備攻略：電視、音響、投影機怎麼選？</div>
+            <div class="news-desc">從預算萬元到五萬元的看球設備推薦，讓你在家也能有球場感。</div>
+            <div class="news-meta">6 分鐘閱讀</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Banner placeholder -->
+    <div class="banner-placeholder">廣告版位 · 728 × 90</div>
+
+    <!-- More articles -->
+    <section id="players">
+      <div class="sec-header">
+        <h2>球星特寫 <span>·</span> 本屆焦點</h2>
+        <a href="/players/" class="sec-more">更多球星 →</a>
+      </div>
+      <div class="cards-3">
+
+        <a href="/players/mbappe.html" class="news-card">
+          <div class="news-card-thumb"><img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=75&auto=format&fit=crop" alt="球星" loading="lazy"></div>
+          <div class="news-card-body">
+            <div class="news-cat">法國</div>
+            <div class="news-title">姆巴佩 2026：帶領法國衛冕還是飲恨而歸？</div>
+            <div class="news-desc">巴黎轉會皇馬後首次世足，能否複製2018年的輝煌？</div>
+            <div class="news-meta">6 分鐘閱讀</div>
+          </div>
+        </a>
+
+        <a href="/players/vinicius.html" class="news-card">
+          <div class="news-card-thumb"><img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&q=75&auto=format&fit=crop" alt="維尼修斯" loading="lazy"></div>
+          <div class="news-card-body">
+            <div class="news-cat">巴西</div>
+            <div class="news-title">維尼修斯：巴西足球的新世代旗手能否奪冠？</div>
+            <div class="news-desc">俱樂部賽事的統治者，國家隊能否同樣發光？完整數據分析。</div>
+            <div class="news-meta">5 分鐘閱讀</div>
+          </div>
+        </a>
+
+        <a href="/players/bellingham.html" class="news-card">
+          <div class="news-card-thumb"><img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=600&q=75&auto=format&fit=crop" alt="貝林厄姆" loading="lazy"></div>
+          <div class="news-card-body">
+            <div class="news-cat">英格蘭</div>
+            <div class="news-title">貝林厄姆領軍英格蘭：大賽魔咒終於要破了嗎？</div>
+            <div class="news-desc">22歲的中場核心，英格蘭60年首奪世足最大希望。</div>
+            <div class="news-meta">5 分鐘閱讀</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Shop widget -->
+    <div id="shop" class="shop-widget">
+      <div class="widget-header">看球好物推薦</div>
+
+      <a href="https://shope.ee/你的分潤連結" class="shop-item" target="_blank" rel="noopener sponsored">
+        <div class="shop-thumb"><img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=200&q=75&auto=format&fit=crop" alt="球衣" loading="lazy"></div>
+        <div>
+          <div class="shop-item-title">熱門球隊球衣 / 球迷周邊</div>
+          <div class="shop-cta">蝦皮選購 →</div>
+        </div>
+      </a>
+
+      <a href="https://shope.ee/你的分潤連結" class="shop-item" target="_blank" rel="noopener sponsored">
+        <div class="shop-thumb"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f4134b?w=200&q=75&auto=format&fit=crop" alt="電視" loading="lazy"></div>
+        <div>
+          <div class="shop-item-title">65 吋 4K 電視 / 投影機精選</div>
+          <div class="shop-cta">蝦皮選購 →</div>
+        </div>
+      </a>
+
+      <a href="https://shope.ee/你的分潤連結" class="shop-item" target="_blank" rel="noopener sponsored">
+        <div class="shop-thumb"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=75&auto=format&fit=crop" alt="零食" loading="lazy"></div>
+        <div>
+          <div class="shop-item-title">零食飲料 / 看球派對用品</div>
+          <div class="shop-cta">蝦皮選購 →</div>
+        </div>
+      </a>
+
+      <a href="https://shope.ee/你的分潤連結" class="shop-item" target="_blank" rel="noopener sponsored">
+        <div class="shop-thumb"><img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=200&q=75&auto=format&fit=crop" alt="足球周邊" loading="lazy"></div>
+        <div>
+          <div class="shop-item-title">足球紀念品 / 精品周邊</div>
+          <div class="shop-cta">蝦皮選購 →</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Rankings widget -->
+    <div class="rank-widget">
+      <div class="widget-header">奪冠賠率排行</div>
+
+      <div class="rank-item">
+        <span class="rank-num top">1</span>
+        <div class="rank-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/640px-Flag_of_Brazil.svg.png" alt="巴西" loading="lazy"></div>
+        <span class="rank-name">巴西</span>
+        <span class="rank-score">4.5倍</span>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num top">2</span>
+        <div class="rank-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/640px-Flag_of_Argentina.svg.png" alt="阿根廷" loading="lazy"></div>
+        <span class="rank-name">阿根廷</span>
+        <span class="rank-score">5.0倍</span>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num top">3</span>
+        <div class="rank-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/640px-Flag_of_France.svg.png" alt="法國" loading="lazy"></div>
+        <span class="rank-name">法國</span>
+        <span class="rank-score">6.0倍</span>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">4</span>
+        <div class="rank-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/640px-Flag_of_Spain.svg.png" alt="西班牙" loading="lazy"></div>
+        <span class="rank-name">西班牙</span>
+        <span class="rank-score">7.5倍</span>
+      </div>
+      <div class="rank-item">
+        <span class="rank-num">5</span>
+        <div class="rank-flag"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/640px-Flag_of_England.svg.png" alt="英格蘭" loading="lazy"></div>
+        <span class="rank-name">英格蘭</span>
+        <span class="rank-score">8.0倍</span>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">世足情報<span>2026</span></div>
+        <p class="footer-desc">台灣球迷最完整的 2026 世界盃足球資訊站，提供球隊介紹、賽事分析、球星特寫與看球好物推薦。</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首頁</a>
+        <a href="#teams">球隊介紹</a>
+        <a href="#articles">賽事分析</a>
+        <a href="#players">球星特寫</a>
+        <a href="#shop">看球好物</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 世足情報 · 台灣</span>
+      <span class="affiliate-note">本站部分商品連結為蝦皮聯盟行銷連結，點擊購買將支持本站持續更新</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+  // 日期
+  const d = new Date();
+  document.getElementById('now-date').textContent =
+    d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日';
+
+  // 倒數
+  function updateCountdown() {
+    const diff = new Date('2026-06-11T19:00:00-05:00') - new Date();
+    if (diff <= 0) { document.getElementById('cd-top').textContent = '已開幕'; return; }
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor(diff % 86400000 / 3600000);
+    const mins  = Math.floor(diff % 3600000 / 60000);
+    const secs  = Math.floor(diff % 60000 / 1000);
+    document.getElementById('cd-top').textContent =
+      days + '天 ' + String(hours).padStart(2,'0') + ':' + String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
